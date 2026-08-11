@@ -22,14 +22,20 @@ public class UsersAdd {
     private String name;
     private String user;
     private String password;
+    @Lob
     private byte[] photo;
     private Boolean active;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_perfil", referencedColumnName = "id")
+    private Perfil perfil;
 
-    public UsersAdd(String name, String user, String password, byte[] photo, Boolean active) {
+
+    public UsersAdd(String name, String user, String password, byte[] photo, Boolean active, Perfil perfil) {
         this.name = name;
         this.user = user;
         this.password = password;
         this.photo = photo;
         this.active = active;
+        this.perfil = perfil;
     }
 }

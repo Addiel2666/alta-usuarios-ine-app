@@ -31,5 +31,6 @@ public class UsersAdd {
     private String repeatPass;
     private byte[] photo;
     private Boolean active;
+    private Long idPerfil;
 
 }
