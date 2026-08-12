@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface UsersAddRepository extends JpaRepository<UsersAdd,Long> {
 
-    @Query(value = "SELECT * FROM users_add u WHERE u.active =:active")
-    List<UsersAdd> consultaUsuarios(@Param("active") int active);
+    @Query(value = "SELECT * FROM users_add u WHERE u.active =:active", nativeQuery = true)
+    List<UsersAdd> consultaUsuarios(@Param("active") Long active);
 
 }

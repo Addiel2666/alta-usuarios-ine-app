@@ -61,7 +61,7 @@ public class UsersServiceImpl implements IUsersService {
     @Override
     public List<UsersConsulta> usuariosPerfil() {
         try {
-            List<mx.app.alta.users.model.UsersAdd> perfil = addRepository.consultaUsuarios(1);
+            List<mx.app.alta.users.model.UsersAdd> perfil = addRepository.consultaUsuarios(new Long(1));
             List<UsersConsulta> listaUsuarios = new ArrayList<>();
             perfil.forEach(usersAdd -> {
                 UsersConsulta usersConsulta = new UsersConsulta(usersAdd.getName(), usersAdd.getUser(), usersAdd.getPhoto(), usersAdd.getActive(), usersAdd.getPerfil().getPerfil());
